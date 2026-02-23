@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Fraud Awareness</title>
+    <meta charset="UTF-8">
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e1e2f, #3a0ca3);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-top: 60px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .orange { background: linear-gradient(to right, orange, red); }
+        .blue { background: linear-gradient(to right, #00c6ff, #0072ff); }
+        .green { background: linear-gradient(to right, #00b09b, #96c93d); }
+        .purple { background: linear-gradient(to right, #a18cd1, #fbc2eb); }
+
+        .stats {
+            margin: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stat-box {
+            font-size: 20px;
+        }
+
+        .stat-box span {
+            font-size: 30px;
+            font-weight: bold;
+            color: orange;
+        }
+
+        @media (max-width: 900px) {
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Bitcoin Fraud Awareness</h1>
+    <p class="subtitle">Educate, Report & Analyze Cryptocurrency Fraud</p>
+
+    <div class="cards-container">
+
+        <div class="card">
+            <h2>Report Fraud</h2>
+            <p>Submit a fraud report and help others stay safe.</p>
+            <a href="report.html" class="btn orange">Report Now</a>
+        </div>
+
+        <div class="card">
+            <h2>Awareness Quiz</h2>
+            <p>Test your knowledge about Bitcoin scams.</p>
+            <a href="quiz.html" class="btn blue">Start Quiz</a>
+        </div>
+
+        <div class="card">
+            <h2>Learn & Protect</h2>
+            <p>Comprehensive fraud education resources.</p>
+            <a href="learn.html" class="btn green">Learn More</a>
+        </div>
+
+        <div class="card">
+            <h2>Admin Dashboard</h2>
+            <p>Monitor and analyze fraud reports.</p>
+            <a href="admin.html" class="btn purple">View Dashboard</a>
+        </div>
+
+    </div>
+
+    <div class="stats">
+        <div class="stat-box">
+            <span>7+</span><br>
+            Fraud Categories
+        </div>
+
+        <div class="stat-box">
+            <span>100%</span><br>
+            Secure & Anonymous
+        </div>
+
+        <div class="stat-box">
+            <span>24/7</span><br>
+            Reporting Available
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn About Bitcoin Frauds</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #1e1e2f, #3a0ca3);
+    color: white;
+    padding-bottom: 40px;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.panel {
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.panel:hover {
+    transform: scale(1.02);
+    background: rgba(255,255,255,0.12);
+}
+
+.panel-header {
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.panel-content {
+    display: none;
+    padding: 18px;
+    background: rgba(0,0,0,0.3);
+    line-height: 1.6;
+}
+
+.section-title {
+    color: #ff6b6b;
+    margin-top: 10px;
+}
+
+.protect-title {
+    color: #4ade80;
+}
+
+.general {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.general h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.guideline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.guideline-box {
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.guideline-box:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, orange, red);
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+</style>
+
+<script>
+function togglePanel(id) {
+    var content = document.getElementById(id);
+    content.style.display = content.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>📚 Learn About Bitcoin Frauds</h1>
+
+<div class="container">
+
+<!-- 1 Phishing -->
+<div class="panel" onclick="togglePanel('p1')">
+<div class="panel-header">1️⃣ Phishing Scams</div>
+<div class="panel-content" id="p1">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Urgent verification emails</li>
+<li>Suspicious URLs</li>
+<li>Spelling mistakes</li>
+<li>Unexpected attachments</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Check HTTPS carefully</li>
+<li>Enable 2FA</li>
+<li>Never click unknown links</li>
+<li>Verify sender email address</li> 
+</ul>
+</div>
+</div>
+
+<!-- 2 Fake Investment -->
+<div class="panel" onclick="togglePanel('p2')">
+<div class="panel-header">2️⃣ Fake Investment Schemes</div>
+<div class="panel-content" id="p2">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Guaranteed profits</li>
+<li>No registration details</li>
+<li>Fake endorsements</li>
+<li>Pressure to invest quickly</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Research company</li>
+<li>Avoid unrealistic returns</li>
+<li>Check reviews</li>
+<li>Verify legal registration</li> 
+</ul>
+</div>
+</div>
+
+<!-- 3 Ponzi -->
+<div class="panel" onclick="togglePanel('p3')">
+<div class="panel-header">3️⃣ Ponzi & Pyramid Schemes</div>
+<div class="panel-content" id="p3">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Recruit to earn</li>
+<li>No real product</li>
+<li>Complex income plan</li>
+<li>Hidden fees</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Avoid referral-only income</li>
+<li>Check legal status</li>
+<li>Demand transparency</li>
+<li>Research past complaints</li> 
+</ul>
+</div>
+</div>
+
+<!-- 4 Malware -->
+<div class="panel" onclick="togglePanel('p4')">
+<div class="panel-header">4️⃣ Malware & Wallet Theft</div>
+<div class="panel-content" id="p4">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Unknown apps installed</li>
+<li>Sudden transactions</li>
+<li>System slowdown</li>
+<li>Popup ads frequently</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Use antivirus</li>
+<li>Download official apps only</li>
+<li>Store keys offline</li>
+<li>Update system regularly</li> 
+</ul>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="panel" onclick="togglePanel('p5')">
+<div class="panel-header">5️⃣ Giveaway Scams</div>
+<div class="panel-content" id="p5">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Send crypto to receive double</li>
+<li>Fake verified accounts</li>
+<li>Live stream scams</li>
+<li>Limited time offers</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>No legit giveaway asks payment</li>
+<li>Verify official account</li>
+<li>Report suspicious posts</li>
+<li>Cross-check website links</li> 
+</ul>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="panel" onclick="togglePanel('p6')">
+<div class="panel-header">6️⃣ Fake Wallet Apps</div>
+<div class="panel-content" id="p6">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Low ratings</li>
+<li>Unknown developer</li>
+<li>Asking seed phrase</li>
+<li>Too many permissions</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Never share recovery phrase</li>
+<li>Download from official source</li>
+<li>Check developer history</li>
+<li>Use hardware wallets</li> 
+</ul>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="panel" onclick="togglePanel('p7')">
+<div class="panel-header">7️⃣ SIM Swap Fraud</div>
+<div class="panel-content" id="p7">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Sudden network loss</li>
+<li>OTP requests</li>
+<li>Password reset alerts</li>
+<li>Unknown SIM activation message</li> 
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Enable SIM lock</li>
+<li>Use app-based 2FA</li>
+<li>Contact telecom immediately</li>
+<li>Avoid sharing Aadhaar/PAN details</li>
+</ul>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="panel" onclick="togglePanel('p8')">
+<div class="panel-header">8️⃣ Rug Pull Scam</div>
+<div class="panel-content" id="p8">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Anonymous team</li>
+<li>No roadmap</li>
+<li>New hype token</li>
+<li>No smart contract audit</li>
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Research team</li>
+<li>Check audits</li>
+<li>Avoid new unknown tokens</li>
+<li>Verify liquidity lock</li>
+</ul>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="panel" onclick="togglePanel('p9')">
+<div class="panel-header">9️⃣ Romance Crypto Scam</div>
+<div class="panel-content" id="p9">
+<p class="section-title">Warning Signs:</p>
+<ul>
+<li>Quick emotional bonding</li>
+<li>Investment requests</li>
+<li>Avoid video calls</li>
+<li>Claims foreign job</li>
+
+</ul>
+<p class="protect-title">How to Protect?</p>
+<ul>
+<li>Never send money to strangers</li>
+<li>Verify identity</li>
+<li>Discuss with family</li>
+<li>Do reverse image search</li>
+</ul>
+</div>
+</div>
+
+<!-- GENERAL GUIDELINES -->
+<div class="general">
+<h2>🔒 Advanced Crypto Safety Guidelines</h2>
+
+<div class="guideline-grid">
+<div class="guideline-box">✔️ Use strong unique passwords</div>
+<div class="guideline-box">✔️ Enable App-based 2FA</div>
+<div class="guideline-box">✔️ Never share private keys</div>
+<div class="guideline-box">✔️ Avoid public WiFi transactions</div>
+<div class="guideline-box">✔️ Research before investing</div>
+<div class="guideline-box">✔️ Use hardware wallets</div>
+<div class="guideline-box">✔️ Keep recovery phrase offline</div>
+<div class="guideline-box">✔️ Regularly update software</div>
+</div>
+
+<center>
+<button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+</center>
+
+</div>
+
+</div>
+
+</body>
+</html>

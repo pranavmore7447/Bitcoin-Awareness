@@ -1,0 +1,11 @@
+CREATE TABLE fraud_reports (
+    id SERIAL PRIMARY KEY,
+    fraud_type VARCHAR(200),
+    description TEXT,
+    btc_address VARCHAR(200),
+    amount_lost DOUBLE PRECISION,
+    name VARCHAR(200),
+    email VARCHAR(200),
+    status VARCHAR(50) DEFAULT 'Pending',
+    report_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Fraud Awareness Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e1e2f, #3a0ca3);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            text-align: right;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .options label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prev { background: gray; color: white; }
+        .next { background: orange; color: white; }
+        .finish { background: green; color: white; }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .percentage {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .level {
+            font-size: 24px;
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        .review-card {
+            text-align: left;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .correct {
+            background: rgba(0,255,0,0.1);
+            border-left: 5px solid green;
+        }
+
+        .wrong {
+            background: rgba(255,0,0,0.1);
+            border-left: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Crypto Fraud Awareness Quiz</h2>
+
+    <div id="quiz"></div>
+
+    <div id="navigation">
+        <button class="prev" onclick="prevQuestion()">Previous</button>
+        <button class="next" onclick="nextQuestion()">Next</button>
+        <button class="finish" id="finishBtn" onclick="finishQuiz()">Finish Quiz</button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+const quizData = [
+    {
+        question: "Someone promises to double your Bitcoin. What should you do?",
+        options: ["Send Bitcoin", "Ignore and report", "Invest more", "Share with friends"],
+        correct: 1
+    },
+    {
+        question: "Email asking to verify account via link is?",
+        options: ["Safe", "Phishing attempt", "Bank update", "Legal notice"],
+        correct: 1
+    },
+    {
+        question: "Guaranteed 50% monthly return means?",
+        options: ["Safe investment", "Ponzi scheme", "Government bond", "Savings plan"],
+        correct: 1
+    },
+    {
+        question: "Private key should be?",
+        options: ["Shared", "Kept secret", "Posted online", "Emailed"],
+        correct: 1
+    },
+    {
+        question: "Fake exchange usually?",
+        options: ["Licensed", "Blocks withdrawal", "Secure", "Regulated"],
+        correct: 1
+    },
+    {
+        question: "Rug pull means?",
+        options: ["Mining reward", "Developers disappear with funds", "Wallet backup", "Network issue"],
+        correct: 1
+    },
+    {
+        question: "Romance crypto scam happens on?",
+        options: ["Dating apps", "Banks", "Mining sites", "Wallets"],
+        correct: 0
+    },
+    {
+        question: "Strong password includes?",
+        options: ["Only name", "Only numbers", "Letters, numbers & symbols", "Birthdate"],
+        correct: 2
+    }
+];
+
+let currentQuestion = 0;
+let userAnswers = new Array(quizData.length);
+
+function loadQuestion() {
+
+    const q = quizData[currentQuestion];
+
+    let html = `
+        <div class="question-number">
+            Question ${currentQuestion + 1} of ${quizData.length}
+        </div>
+        <div class="question">${q.question}</div>
+        <div class="options">
+    `;
+
+    for (let i = 0; i < q.options.length; i++) {
+        html += `
+            <label>
+                <input type="radio" name="option" value="${i}"
+                ${userAnswers[currentQuestion] == i ? "checked" : ""}>
+                ${q.options[i]}
+            </label>
+        `;
+    }
+
+    html += "</div>";
+
+    document.getElementById("quiz").innerHTML = html;
+
+    // Show/Hide Buttons
+    document.querySelector(".prev").style.display =
+        currentQuestion === 0 ? "none" : "inline-block";
+
+    document.querySelector(".next").style.display =
+        currentQuestion === quizData.length - 1 ? "none" : "inline-block";
+
+    document.getElementById("finishBtn").style.display =
+        currentQuestion === quizData.length - 1 ? "inline-block" : "none";
+}
+
+function saveAnswer() {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if (selected) {
+        userAnswers[currentQuestion] = parseInt(selected.value);
+    }
+}
+
+function nextQuestion() {
+    saveAnswer();
+    if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+    }
+}
+
+function prevQuestion() {
+    saveAnswer();
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
+}
+
+function finishQuiz() {
+    saveAnswer();
+
+    let score = 0;
+    let reviewHTML = "";
+
+    for (let i = 0; i < quizData.length; i++) {
+        let isCorrect = userAnswers[i] == quizData[i].correct;
+        if (isCorrect) score++;
+
+        reviewHTML += `
+            <div class="review-card ${isCorrect ? 'correct' : 'wrong'}">
+                <h4>Question ${i + 1}: ${quizData[i].question}</h4>
+                <p><b>Your answer:</b> ${quizData[i].options[userAnswers[i]] || "Not Answered"}</p>
+                <p><b>Correct answer:</b> ${quizData[i].options[quizData[i].correct]}</p>
+            </div>
+        `;
+    }
+
+    let percentage = Math.round((score / quizData.length) * 100);
+    let level = "";
+    let message = "";
+
+    if (percentage < 40) {
+        level = "Beginner";
+        message = "You need more education about crypto fraud.";
+    } else if (percentage < 70) {
+        level = "Intermediate";
+        message = "Good effort! Improve your fraud awareness knowledge.";
+    } else {
+        level = "Expert";
+        message = "Excellent! You have strong awareness about crypto fraud.";
+    }
+
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("navigation").style.display = "none";
+
+    document.getElementById("result").innerHTML = `
+        <h2>Quiz Complete!</h2>
+        <p>Here's how you did</p>
+        <div class="percentage">${percentage}%</div>
+        <div class="level">${level}</div>
+        <p>${message}</p>
+        <p>You answered ${score} out of ${quizData.length} correctly</p>
+        <h3>Review Your Answers:</h3>
+        ${reviewHTML}
+        <button onclick="location.reload()">Retake Quiz</button>
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    `;
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
